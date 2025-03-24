@@ -17,9 +17,10 @@ class Nim:
     self.num_actions = 0
 
   def isCorrect(self, action, currState):
-    if Optimal.rec_game(currState.state, currState.max_removal) == 'P':
+    Opt = Optimal()
+    if Opt.rec_game(currState.state, currState.max_removal) == 'P':
       return True
-    elif Optimal.rec_game(currState.peekAction(action).state, currState.peekAction(action).max_removal) == 'P':
+    elif Opt.rec_game(currState.peekAction(action).state, currState.peekAction(action).max_removal) == 'P':
       return True
     else:
       return False

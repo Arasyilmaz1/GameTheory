@@ -9,5 +9,3 @@ class Action:
 
   def __str__(self):
     return '(' + str(self.action[0]) + ',' + str(self.action[1]) + ')'
-
-print("hello world")
