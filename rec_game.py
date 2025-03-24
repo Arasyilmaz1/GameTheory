@@ -31,7 +31,7 @@ def rec_game(Dict, lst, max_removal):
       position[pile] -= removal
       if position[pile] <= 0:
         position.pop(pile)
-      if rec_game(position,2*removal) == 'P':
+      if rec_game(Dict, position,2*removal) == 'P':
         Dict[to_str(lst, max_removal)] = 'N'
         return 'N'
   Dict[to_str(lst, max_removal)] = 'P'

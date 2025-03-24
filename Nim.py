@@ -3,9 +3,9 @@ from State import State
 from QLearning import Q_Learning
 from Human import Human
 from Optimal import Optimal
+from rec_game import rec_game
 
 class Nim:
-
   def __init__(self, player1, player2, nGames):
     self.player1 = player1
     self.player2 = player2
@@ -15,12 +15,12 @@ class Nim:
     self.losses = 0
     self.num_correct_actions = 0
     self.num_actions = 0
+    self.Dict = {}
 
   def isCorrect(self, action, currState):
-    Opt = Optimal()
-    if Opt.rec_game(currState.state, currState.max_removal) == 'P':
+    if rec_game(self.Dict, currState.state, currState.max_removal) == 'P':
       return True
-    elif Opt.rec_game(currState.peekAction(action).state, currState.peekAction(action).max_removal) == 'P':
+    elif rec_game(self.Dict, currState.peekAction(action).state, currState.peekAction(action).max_removal) == 'P':
       return True
     else:
       return False
