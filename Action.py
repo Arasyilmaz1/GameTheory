@@ -1,4 +1,4 @@
-
+import numpy as np
 #An action of this game is just a tuple (a,b), which means remove b pebbles from ath pile.
 class Action:
   def __init__(self, action):
@@ -9,3 +9,5 @@ class Action:
 
   def __str__(self):
     return '(' + str(self.action[0]) + ',' + str(self.action[1]) + ')'
+
+print("hello world")
