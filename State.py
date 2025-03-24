@@ -1,6 +1,6 @@
 # A state in this game is a list togather with a number max_removal. List represents the number of pebbles left in each pile.
 # max_removal represents the maximum number of pebbles that can be removed from a pile.
-
+from Action import Action
 class State:
   def __init__(self, state, max_removal):
     if type(state) is (not list or not tuple):
