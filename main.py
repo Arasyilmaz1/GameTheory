@@ -8,6 +8,7 @@ from Nim import Nim
 import numpy as np
 import matplotlib.pyplot as plt
 from DQN import DQN
+from Action import Action
 
 
 DQNAgent = DQN(5,3,0.01)

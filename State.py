@@ -10,6 +10,7 @@ class State:
     else:
       self.state = tuple(state)
       self.max_removal = max_removal
+      self.num_acts = 0
   def isTerminal(self):
     return sum(self.state) == 0
 
@@ -40,6 +41,7 @@ class State:
         self.max_removal = 2*self.state[action.action[0]]
         self.state[action.action[0]] = 0
       self.state = tuple(self.state)
+      self.num_acts += 1
 
   def peekAction(self,action):
     newState = State(list(self.state), self.max_removal)
