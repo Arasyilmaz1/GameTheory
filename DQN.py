@@ -113,7 +113,7 @@ class DQN(Agent):
     mask = tf.one_hot(minibatch_actions, self.max_pebbles*self.max_piles)
     with tf.GradientTape() as tape:
             q_values = self.model(minibatch_states)
-            q_action = tf.reduce_sum(tf.multiply(q_values, mask), axis=1)
+            q_action = tf.reduce_sum(tf.multiply(q_values, mask), axis=1)``
             loss = self.loss_function(target_term, q_action)
     self.cum_loss += loss
     grads = tape.gradient(loss, self.model.trainable_variables)

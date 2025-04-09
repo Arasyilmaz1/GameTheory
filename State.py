@@ -1,4 +1,4 @@
-# A state in this game is a list togather with a number max_removal. List represents the number of pebbles left in each pile.
+# A state in this game is a list together with a number max_removal. List represents the number of pebbles left in each pile.
 # max_removal represents the maximum number of pebbles that can be removed from a pile.
 from Action import Action
 class State:
