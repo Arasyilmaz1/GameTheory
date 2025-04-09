@@ -45,21 +45,21 @@ class NimGameUI:
            self.reset_screen()
            self.finish_screen()
            return
-        self.status_label = tk.Label(self.controlpanel, text='Max removal: ' + str(self.state.max_removal))
-        self.status_label.grid(row = 0, column = 0)
+        self.status_label = tk.Label(self.controlpanel, text='Max removal: ' + str(self.state.max_removal), font=('Bell MT',17))
+        self.status_label.grid(row = 0, column = 1)
         
         if self.state.num_acts %2 == 0:
           text = 'Player 1'
         else:
           text = 'Player 2'
-        playerLabel = tk.Label(self.controlpanel, text = 'Turn: '+text)
-        playerLabel.grid(row = 1, column = 0)
+        playerLabel = tk.Label(self.controlpanel, text = 'Turn: '+text, font=('Bell MT',17))
+        playerLabel.grid(row = 1, column = 1)
 
         
-        Optimalbutton = tk.Button(self.controlpanel, text = 'Play against Optimal Agent move', command = self.optButton )
+        Optimalbutton = tk.Button(self.controlpanel, text = 'Optimal move',font = ('Bell MT',17), command = self.optButton )
         Optimalbutton.grid(row = 2, column = 0)
-        Qbutton = tk.Button(self.controlpanel, text = 'Q Learning Agent move', command = self.qButton)
-        Qbutton.grid(row = 3 , column = 0)
+        Qbutton = tk.Button(self.controlpanel, text = 'Q-Learning move', font = ('Bell MT',17),command = self.qButton)
+        Qbutton.grid(row = 2 , column = 2)
 
         state = self.state.state
         for i in range(len(state)):
